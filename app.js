@@ -3,12 +3,10 @@ let cookies = 0
 let clickUpgrades = {
   chocChips: {
     price: 2,
-    // raise price after project completed
     quantity: 0,
   },
   batter: {
-    price: 5,
-    // raise price after project completed
+    price: 10,
     quantity: 0,
   }
 };
@@ -44,6 +42,7 @@ function buyChocChips() {
   }
   updateCookieCount();
   updateChocChips();
+  currentChocChipsCost();
 }
 
 function buyBatter() {
@@ -55,6 +54,7 @@ function buyBatter() {
   }
   updateCookieCount();
   updateBatter();
+  currentBatterCost();
 }
 
 function buyBakingSheets() {
@@ -66,6 +66,7 @@ function buyBakingSheets() {
   updateCookieCount();
   updateBakingSheets();
   currentBakingSheetMultiplier();
+  currentBakingSheetCost();
 }
 
 function buyOvens() {
@@ -77,9 +78,8 @@ function buyOvens() {
   updateCookieCount();
   updateOvens();
   currentOvenMultiplier();
+  currentOvenCost();
 }
-
-
 
 function multipliedOvens() {
   cookies += (automaticUpgrades.oven.multiplier * automaticUpgrades.oven.quantity);
@@ -121,6 +121,22 @@ function currentBakingSheetMultiplier() {
 
 function currentOvenMultiplier() {
   document.getElementById("currentOvenMultiplier").innerHTML = automaticUpgrades.oven.multiplier
+}
+
+function currentChocChipsCost() {
+  document.getElementById("chipsCost").innerHTML = clickUpgrades.chocChips.price
+}
+
+function currentBatterCost() {
+  document.getElementById("batterCost").innerHTML = clickUpgrades.batter.price
+}
+
+function currentBakingSheetCost() {
+  document.getElementById("currentBakingSheetCost").innerHTML = automaticUpgrades.bakingSheets.price
+}
+
+function currentOvenCost() {
+  document.getElementById("currentOvenCost").innerHTML = automaticUpgrades.oven.price
 }
 
 startIntervalOvens();

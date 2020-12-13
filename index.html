@@ -28,14 +28,22 @@
     </div>
 
     <div class="row">
-      
+
       <div class="col-md-4">
         <h4>Upgrades</h4>
-        <button type="button" class="chips btn btn-danger" onclick="buyChocChips()">Chocolate Chips</button>
-        <button type="button" class="batter btn btn-danger" onclick="buyBatter()">Batter</button>
+        <button type="button" class="chips btn btn-danger mx-3" onclick="buyChocChips()">Chocolate
+          Chips</button><span id="chipsCost"></span><br>
+
+        <button type="button" class="batter btn btn-danger my-1 mx-3" onclick="buyBatter()">Batter</button><span
+          id="batterCost"></span>
         <h4>Auto Upgrades</h4>
-        <button type="button" class="oven btn btn-danger" onclick="buyOvens()">Oven</button>
-        <button type="button" class="bakingSheet btn btn-danger" onclick="buyBakingSheets()">Baking Sheets</button>
+
+        <button type="button" class="bakingSheet btn btn-danger my-1 mx-3" id="bakingSheetCost"
+          onclick="buyBakingSheets()">Baking Sheets</button><span id="currentBakingSheetCost"></span><br>
+
+        <button type="button" class="oven btn btn-danger mx-3" id="ovenCost" onclick="buyOvens()">Oven</button><span
+          id="currentOvenCost"></span>
+
       </div>
 
       <div class="col-md-4 d-flex justify-content-center my-1">
@@ -44,14 +52,15 @@
 
       <div class="col-md-4">
         <h5>Current Multipliers: </h5><br>
-        <span><img src="bakingSheet.png" height="50px" width="50px"> = <span id="currentBakingSheetMultiplier"></span></span> <br>
+        <span><img src="bakingSheet.png" height="50px" width="50px"> = <span
+            id="currentBakingSheetMultiplier"></span></span> <br>
         <span><img src="oven.png" height="50px" width="50px"> = <span id="currentOvenMultiplier"></span></span>
       </div>
 
     </div>
-   
+
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 text-center">
         <h5>Current Items</h5><br>
         <span>Chocolate Chips: <span id="currentChipCount"></span></span><br>
         <span>Batter: <span id="currentBatterCount"></span></span><br>
