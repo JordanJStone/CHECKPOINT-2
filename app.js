@@ -81,6 +81,8 @@ function buyOvens() {
   currentOvenCost();
 }
 
+
+
 function multipliedOvens() {
   cookies += (automaticUpgrades.oven.multiplier * automaticUpgrades.oven.quantity);
   updateCookieCount();
@@ -91,6 +93,8 @@ function multipliedbakingSheets() {
   updateCookieCount();
 }
 
+
+
 function startIntervalOvens() {
   setInterval(multipliedOvens, 1000);
 }
@@ -98,6 +102,8 @@ function startIntervalOvens() {
 function startIntervalbakingSheets() {
   setInterval(multipliedbakingSheets, 1000);
 }
+
+
 
 function updateChocChips() {
   document.getElementById("currentChipCount").innerHTML = clickUpgrades.chocChips.quantity;
@@ -115,6 +121,8 @@ function updateOvens() {
   document.getElementById("currentOvensCount").innerHTML = automaticUpgrades.oven.quantity;
 }
 
+
+
 function currentBakingSheetMultiplier() {
   document.getElementById("currentBakingSheetMultiplier").innerHTML = automaticUpgrades.bakingSheets.multiplier
 }
@@ -122,6 +130,8 @@ function currentBakingSheetMultiplier() {
 function currentOvenMultiplier() {
   document.getElementById("currentOvenMultiplier").innerHTML = automaticUpgrades.oven.multiplier
 }
+
+
 
 function currentChocChipsCost() {
   document.getElementById("chipsCost").innerHTML = clickUpgrades.chocChips.price
