@@ -20,7 +20,7 @@ let automaticUpgrades = {
     multiplier: 20
   },
   bakingSheets: {
-    price: 400,
+    price: 4,
     quantity: 0,
     multiplier: 50,
   }
@@ -28,10 +28,10 @@ let automaticUpgrades = {
 
 function mine() {
   cookies += 1;
-  update();
+  updateCookieCount();
 }
 
-function update() {
+function updateCookieCount() {
   document.getElementById("currentCookies").innerHTML = cookies;
 }
 
@@ -42,7 +42,8 @@ function buyChocChips() {
     clickUpgrades.chocChips.price += 5;
     cookies -= 25;
   }
-  update();
+  updateCookieCount();
+  updateChocChips();
 }
 
 function buyBatter() {
@@ -52,26 +53,76 @@ function buyBatter() {
     clickUpgrades.batter.price += 10;
     cookies -= 50;
   }
-  update();
+  updateCookieCount();
+  updateBatter();
 }
 
-function BuyOvens() {
+function buyBakingSheets() {
+  if (cookies >= automaticUpgrades.bakingSheets.price) {
+    automaticUpgrades.bakingSheets.quantity++;
+    automaticUpgrades.bakingSheets.price += 60
+    cookies -= 6
+  }
+  updateCookieCount();
+  updateBakingSheets();
+  currentBakingSheetMultiplier();
+}
+
+function buyOvens() {
   if (cookies >= automaticUpgrades.oven.price) {
     automaticUpgrades.oven.quantity++;
     automaticUpgrades.oven.price += 100
     cookies -= 6
   }
-  update();
+  updateCookieCount();
+  updateOvens();
+  currentOvenMultiplier();
 }
+
+
 
 function multipliedOvens() {
   cookies += (automaticUpgrades.oven.multiplier * automaticUpgrades.oven.quantity);
-  update();
+  updateCookieCount();
 }
 
-function startInterval() {
+function multipliedbakingSheets() {
+  cookies += (automaticUpgrades.bakingSheets.multiplier * automaticUpgrades.bakingSheets.quantity);
+  updateCookieCount();
+}
+
+function startIntervalOvens() {
   setInterval(multipliedOvens, 1000);
 }
 
-startInterval();
+function startIntervalbakingSheets() {
+  setInterval(multipliedbakingSheets, 1000);
+}
+
+function updateChocChips() {
+  document.getElementById("currentChipCount").innerHTML = clickUpgrades.chocChips.quantity;
+}
+
+function updateBatter() {
+  document.getElementById("currentBatterCount").innerHTML = clickUpgrades.batter.quantity;
+}
+
+function updateBakingSheets() {
+  document.getElementById("currentBakingSheetsCount").innerHTML = automaticUpgrades.bakingSheets.quantity;
+}
+
+function updateOvens() {
+  document.getElementById("currentOvensCount").innerHTML = automaticUpgrades.oven.quantity;
+}
+
+function currentBakingSheetMultiplier() {
+  document.getElementById("currentBakingSheetMultiplier").innerHTML = automaticUpgrades.bakingSheets.multiplier
+}
+
+function currentOvenMultiplier() {
+  document.getElementById("currentOvenMultiplier").innerHTML = automaticUpgrades.oven.multiplier
+}
+
+startIntervalOvens();
+startIntervalbakingSheets();
 mine();
