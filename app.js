@@ -15,14 +15,14 @@ let clickUpgrades = {
 
 let automaticUpgrades = {
   oven: {
-    price: 6,
+    price: 60,
     quantity: 0,
-    multiplier: 20
+    multiplier: 50
   },
   bakingSheets: {
-    price: 4,
+    price: 40,
     quantity: 0,
-    multiplier: 50,
+    multiplier: 20,
   }
 };
 

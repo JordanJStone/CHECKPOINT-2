@@ -25,40 +25,47 @@
       <div class="col-12 d-flex justify-content-center">
         <h2>Current Cookies: <span id="currentCookies" class="text-light"></span></h2>
       </div>
+    </div>
+
+    <div class="row">
       
-      <div class="col-12 d-flex justify-content-center my-1">
-        <img class="cookie" onclick="mine()" src="cookie-guy.png" height="300px" width="400px">
+      <div class="col-md-4">
+        <h4>Upgrades</h4>
+        <button type="button" class="chips btn btn-danger" onclick="buyChocChips()">Chocolate Chips</button>
+        <button type="button" class="batter btn btn-danger" onclick="buyBatter()">Batter</button>
+        <h4>Auto Upgrades</h4>
+        <button type="button" class="oven btn btn-danger" onclick="buyOvens()">Oven</button>
+        <button type="button" class="bakingSheet btn btn-danger" onclick="buyBakingSheets()">Baking Sheets</button>
       </div>
 
-      <div class="col-12 d-flex">
-        <button class="chips" onclick="buyChocChips()">Chocolate Chips</button>
-        <button class="batter" onclick="buyBatter()">Batter</button>
+      <div class="col-md-4 d-flex justify-content-center my-1">
+        <img class="cookie" onclick="mine()" src="cookie-guy.png" height="225px" width="300px">
       </div>
 
-      <div class="col-12 d-flex mx-5">
-        <button class="oven" onclick="buyOvens()">Oven</button>
-        <button class="oven" onclick="buyBakingSheets()">Baking Sheets</button>
+      <div class="col-md-4">
+        <h5>Current Multipliers: </h5><br>
+        <span><img src="bakingSheet.png" height="50px" width="50px"> = <span id="currentBakingSheetMultiplier"></span></span> <br>
+        <span><img src="oven.png" height="50px" width="50px"> = <span id="currentOvenMultiplier"></span></span>
       </div>
 
+    </div>
+   
+    <div class="row">
       <div class="col-12">
-        <span>Amount of Items </span><br>
-<span>Chocolate Chips: <span id="currentChipCount"></span></span><br>
-<span>Batter: <span id="currentBatterCount"></span></span><br>
-<span>Baking Sheets: <span id="currentBakingSheetsCount"></span></span> <br>
-<span>Ovens: <span id="currentOvensCount"></span></span>
+        <h5>Current Items</h5><br>
+        <span>Chocolate Chips: <span id="currentChipCount"></span></span><br>
+        <span>Batter: <span id="currentBatterCount"></span></span><br>
+        <span>Baking Sheets: <span id="currentBakingSheetsCount"></span></span> <br>
+        <span>Ovens: <span id="currentOvensCount"></span></span>
       </div>
-    <div class="col-12">
-      <span>Current Multipliers: </span><br>
-      <span><img src="bakingSheet.png" height="25px" width="25px"> = <span id="currentBakingSheetMultiplier"></span></span> <br>
-      <span><img src="oven.png" height="25px" width="25px"> = <span id="currentOvenMultiplier"></span></span>
-    </div>>
+
     </div>
   </main>
 
   <footer class="container-fluid bg-danger">
     <div class="row">
       <div class="col text-center">
-        Herein lies my footer
+        Powered by Bootstrap
       </div>
     </div>
   </footer>
