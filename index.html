@@ -22,20 +22,24 @@
 
   <main class="container-fluid bg-success bg-gradient">
     <div class="row">
-      <div class="col d-flex justify-content-center my-1">
+      <div class="col-12 d-flex justify-content-center">
+        <h2>Current Cookies: <span id="currentCookies" class="text-light"></span></h2>
+      </div>
+      
+      <div class="col-12 d-flex justify-content-center my-1">
         <img class="cookie" onclick="mine()" src="cookie-guy.png" height="300px" width="400px">
       </div>
-      <div class="col-12 d-flex">
-        <span>Current Cookies: <span id="currentCookies"></span></span>
-      </div>
+
       <div class="col-12 d-flex">
         <button class="chips" onclick="buyChocChips()">Chocolate Chips</button>
         <button class="batter" onclick="buyBatter()">Batter</button>
       </div>
+
       <div class="col-12 d-flex mx-5">
         <button class="oven" onclick="buyOvens()">Oven</button>
         <button class="oven" onclick="buyBakingSheets()">Baking Sheets</button>
       </div>
+
       <div class="col-12">
         <span>Amount of Items </span><br>
 <span>Chocolate Chips: <span id="currentChipCount"></span></span><br>
